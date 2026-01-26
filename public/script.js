@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = '/api'; // Proxy through our server
+const API_BASE_URL = '/api';
 let currentMangaId = null;
 let currentChapterId = null;
 let currentPages = [];
