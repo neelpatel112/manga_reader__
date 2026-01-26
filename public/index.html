@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaDex Reader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <span>MangaReader</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search manga...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">Popular</a>
+                <a href="#">Latest</a>
+                <a href="#">Library</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Read Your Favorite Manga</h1>
+            <p>Thousands of manga titles available for free</p>
+        </section>
+
+        <!-- Featured/Popular Manga -->
+        <section class="featured-section">
+            <div class="section-header">
+                <h2><i class="fas fa-fire"></i> Popular Manga</h2>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            
+            <div class="manga-grid" id="mangaGrid">
+                <!-- Manga cards will be loaded here -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading manga...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recently Updated -->
+        <section class="updates-section">
+            <h2><i class="fas fa-history"></i> Recently Updated</h2>
+            <div class="updates-grid" id="updatesGrid">
+                <!-- Recently updated manga will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Powered by MangaDex API • Made with <i class="fas fa-heart"></i> for manga lovers</p>
+        <p class="disclaimer">This site uses the MangaDex API. All content belongs to their respective owners.</p>
+    </footer>
+
+    <!-- Manga Reader Modal -->
+    <div class="reader-modal" id="readerModal">
+        <div class="reader-container">
+            <div class="reader-header">
+                <h2 id="readerTitle">Manga Title</h2>
+                <button class="close-reader" id="closeReader"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="reader-controls">
+                <button id="prevChapter"><i class="fas fa-chevron-left"></i> Previous</button>
+                <select id="chapterSelect">
+                    <option>Loading chapters...</option>
+                </select>
+                <button id="nextChapter">Next <i class="fas fa-chevron-right"></i></button>
+                <button id="toggleDarkMode"><i class="fas fa-moon"></i> Dark</button>
+                <select id="pageSelect">
+                    <option>Page 1</option>
+                </select>
+            </div>
+            <div class="reader-content" id="readerContent">
+                <div class="page-container">
+                    <!-- Manga pages will be loaded here -->
+                    <p class="loading-text">Loading pages...</p>
+                </div>
+            </div>
+            <div class="reader-footer">
+                <div class="reader-info">
+                    <span id="currentPage">Page 1</span> of <span id="totalPages">1</span>
+                </div>
+                <div class="reader-zoom">
+                    <button id="zoomOut"><i class="fas fa-search-minus"></i></button>
+                    <span id="zoomLevel">100%</span>
+                    <button id="zoomIn"><i class="fas fa-search-plus"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
